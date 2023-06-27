@@ -1,8 +1,8 @@
 import * as S from './NavbarStyled';
 import Logo from '/logo.svg';
-import { IGeneralProps, SelectedTabEnum } from '../../interfaces/interfaces';
+import { SelectedTabEnum } from '../../../interfaces/interfaces';
 import { FC } from 'react';
-import Burger from './MenuButton/MenuButton';
+import Burger from '../../molecules/MenuButton/MenuButton';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '@/redux/hook/hooks';
 import { setBurgerOpen, setSelectedTab } from '@/redux/slices/ui/uiSlice';

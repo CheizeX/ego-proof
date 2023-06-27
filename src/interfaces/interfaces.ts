@@ -5,9 +5,8 @@ export enum SelectedTabEnum {
 }
 
 // INTERFACES
-export interface IGeneralProps {
-	selected: SelectedTabEnum;
-	setSelected: React.Dispatch<React.SetStateAction<SelectedTabEnum>>;
-	burgerOpen: boolean;
-	setBurgerOpen: React.Dispatch<React.SetStateAction<boolean>>;
+
+export interface BurgerProps {
+	open: boolean;
+	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }

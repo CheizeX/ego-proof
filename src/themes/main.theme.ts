@@ -11,7 +11,7 @@ export const defaultTheme: DefaultTheme = {
 			6: '#B2B2B2',
 			7: '#CCCCCC',
 			8: '#D5D5D5',
-			9: '#F7F7F7',
+			9: '#E9E9E9',
 			10: '#FFF',
 		},
 		red: {
