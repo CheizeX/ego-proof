@@ -1,0 +1,65 @@
+module.exports = {
+	env: {
+		browser: true,
+		es2021: true,
+	},
+	extends: [
+		'plugin:react/recommended',
+		'standard-with-typescript',
+		'plugin:react/jsx-runtime',
+		'eslint-config-prettier',
+	],
+	overrides: [],
+	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		project: './tsconfig.json',
+		ecmaVersion: 'latest',
+		sourceType: 'module',
+	},
+	settings: {
+		react: { version: 'detect' },
+	},
+	plugins: ['react', '@typescript-eslint', 'prettier'],
+	rules: {
+		quotes: [1, 'single'],
+		semi: ['error', 'always'],
+		allowTemplateLiterals: 0,
+		'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
+		'no-console': 'warn',
+		'@typescript-eslint/restrict-plus-operands': 'off',
+		'@typescript-eslint/quotes': 'off',
+		'@typescript-eslint/no-unused-vars': 'warn',
+		'@typescript-eslint/semi': 'off',
+		'@typescript-eslint/explicit-function-return-type': 'off',
+		'@typescript-eslint/space-before-function-paren': 'off',
+		'@typescript-eslint/triple-slash-reference': 'off',
+		'@typescript-eslint/strict-boolean-expressions': 'off',
+		'@typescript-eslint/consistent-type-definitions': ['off'],
+		'@typescript-eslint/no-misused-promises': ['off'],
+		'@typescript-eslint/restrict-template-expressions': 'off',
+		'@typescript-eslint/consistent-type-assertions': 'off',
+		'import/order': [
+			'error',
+			{
+				pathGroups: [
+					{
+						pattern: '~/**',
+						group: 'external',
+						position: 'after',
+					},
+				],
+				groups: [
+					'builtin',
+					'external',
+					'internal',
+					'unknown',
+					'parent',
+					'sibling',
+					'index',
+					'object',
+					'type',
+				],
+			},
+		],
+	},
+};
