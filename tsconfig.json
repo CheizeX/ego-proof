@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"composite": true,
+		"target": "ESNext",
+		"useDefineForClassFields": true,
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"allowJs": false,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"sourceMap": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	},
+	"include": [
+		"src",
+		"vite.config.ts",
+		".eslintrc.cjs",
+		"commitlint.config.js",
+		"src/app/setting/dataSources/operations/.ts",
+		"src/app/channel/core/domain/entity/channelCredential/properties/.ts",
+		"src/app/report/dataSources/dtos/.ts"
+	],
+	"baseUrl": ".",
+	"exclude": ["node_modules"]
+}
