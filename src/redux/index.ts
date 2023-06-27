@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import uiState from './slices/ui/uiSlice';
+import cars from './slices/cars/carsSlice';
 
 export const store = configureStore({
 	reducer: {
-		uiState: uiState,
+		uiState,
+		cars,
 	},
 	middleware: getDefaultMiddleware =>
 		getDefaultMiddleware({

@@ -2,18 +2,19 @@ import styled, { css } from 'styled-components/macro';
 
 export const StyledSidebar = styled.aside<{ open: boolean }>`
 	position: fixed;
-	top: 0px;
+	top: 70px;
+	bottom: 0;
 	right: 0;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	max-width: 390px;
-	height: 100vh;
+	height: calc(100% - 70px);
 	box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.05);
 	background-color: ${({ theme }) => theme.color.gray[10]};
 	transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
 	transition: all 0.2s;
-	padding-top: 70px;
+	z-index: 1;
 `;
 
 export const StyledSidebarMainContainer = styled.div`
@@ -46,13 +47,6 @@ export const StyledSidebarMainContainer = styled.div`
 	&::-webkit-scrollbar {
 		transition: all 0.3s ease;
 		width: 0;
-	}
-	& > span {
-		top: 60px;
-		position: absolute;
-		width: 100%;
-		max-width: 390px;
-		box-shadow: 10px 10px 10px 10px rgba(255, 255, 255, 1);
 	}
 `;
 
