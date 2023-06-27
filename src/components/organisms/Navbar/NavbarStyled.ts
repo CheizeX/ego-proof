@@ -5,7 +5,7 @@ export const StyledNavbar = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 30px;
+	padding: 0 15px 0 35px;
 	min-width: 100%;
 	height: 70px;
 	background-color: ${({ theme }) => theme.color.gray[10]};
@@ -49,8 +49,10 @@ export const StyledNavbarLeftSideButton = styled.button<{ selected: boolean }>`
 
 export const StyledNavbarRightSideContainer = styled.div`
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
-	gap: 15px;
+	gap: 10px;
+	z-index: 1;
 `;
 export const StyledUnderlineContainer = styled.div`
 	position: relative;
@@ -60,7 +62,6 @@ export const StyledUnderlineContainer = styled.div`
 export const StyledUnderline = styled(motion.div)<{
 	selected: boolean;
 }>`
-	z-index: 10;
 	position: absolute;
 	height: 4px;
 	bottom: -2.5px;
