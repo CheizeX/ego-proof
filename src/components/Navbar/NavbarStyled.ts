@@ -47,6 +47,11 @@ export const StyledNavbarLeftSideButton = styled.button<{ selected: boolean }>`
 	}
 `;
 
+export const StyledNavbarRightSideContainer = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 15px;
+`;
 export const StyledUnderlineContainer = styled.div`
 	position: relative;
 	width: 150px;

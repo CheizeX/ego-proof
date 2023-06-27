@@ -3,13 +3,15 @@ import Logo from '/logo.svg';
 import { IGeneralProps, SelectedTabEnum } from '../../interfaces/interfaces';
 import { FC } from 'react';
 import Burger from './MenuButton/MenuButton';
+import { useDispatch } from 'react-redux';
+import { useAppSelector } from '@/redux/hook/hooks';
+import { setBurgerOpen, setSelectedTab } from '@/redux/slices/ui/uiSlice';
 
-const Navbar: FC<IGeneralProps> = ({
-	selected,
-	setSelected,
-	burgerOpen,
-	setBurgerOpen,
-}) => {
+const Navbar = () => {
+	const dispatch = useDispatch();
+	const selected = useAppSelector(state => state.uiState.selectedTab);
+	const burgerOpen = useAppSelector(state => state.uiState.burgerOpen);
+
 	const getTabIndex = (tab: SelectedTabEnum): number => {
 		return tab === SelectedTabEnum.MODELOS ? 0 : 150;
 	};
@@ -24,7 +26,7 @@ const Navbar: FC<IGeneralProps> = ({
 							<S.StyledNavbarLeftSideButton
 								key={item}
 								selected={selected === item}
-								onClick={() => setSelected(item)}
+								onClick={() => dispatch(setSelectedTab(item))}
 							>
 								{item}
 							</S.StyledNavbarLeftSideButton>
@@ -38,7 +40,13 @@ const Navbar: FC<IGeneralProps> = ({
 					/>
 				</div>
 			</S.StyledNavbarLeftSideContainer>
-			<Burger open={burgerOpen} setOpen={setBurgerOpen} />
+			<S.StyledNavbarRightSideContainer>
+				{burgerOpen ? 'Cerrar' : 'Menú'}
+				<Burger
+					open={burgerOpen}
+					setOpen={() => dispatch(setBurgerOpen(!burgerOpen))}
+				/>
+			</S.StyledNavbarRightSideContainer>
 		</S.StyledNavbar>
 	);
 };
