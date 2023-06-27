@@ -7,7 +7,7 @@ interface BurgerProps {
 }
 
 const StyledBurger = styled(motion.button)<{ open: boolean }>`
-	position: fixed;
+	/* position: fixed; */
 	top: 20px;
 	right: 30px;
 	display: flex;
