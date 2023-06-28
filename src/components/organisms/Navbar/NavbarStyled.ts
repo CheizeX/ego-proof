@@ -51,18 +51,17 @@ export const StyledNavbarLeftSideButton = styled.button<{ selected: boolean }>`
 		opacity: 0.8;
 		box-shadow: inset 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
 	}
+	@media (max-width: 580px) {
+		display: none;
+	}
 `;
 
-export const StyledNavbarRightSideContainer = styled.div`
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 10px;
-	z-index: 2;
-`;
 export const StyledUnderlineContainer = styled.div`
 	position: relative;
 	width: 150px;
+	@media (max-width: 580px) {
+		display: none;
+	}
 `;
 
 export const StyledUnderline = styled(motion.div)<{
@@ -74,4 +73,15 @@ export const StyledUnderline = styled(motion.div)<{
 	background-color: ${({ theme }) => theme.color.red[2]};
 	border-radius: 0rem;
 	width: 150px;
+	@media (max-width: 580px) {
+		display: none;
+	}
+`;
+
+export const StyledNavbarRightSideContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	z-index: 2;
 `;

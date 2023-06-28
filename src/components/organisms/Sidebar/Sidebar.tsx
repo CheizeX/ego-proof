@@ -5,9 +5,10 @@ import {
 	sidebarFooterSectionItems,
 } from './SidebarShared';
 import { useEffect, useState } from 'react';
-import { setBurgerOpen } from '@/redux/slices/ui/uiSlice';
-import { Model } from '@/interfaces/interfaces';
+import { setBurgerOpen, setSelectedTab } from '@/redux/slices/ui/uiSlice';
+import { Model, SelectedTabEnum } from '@/interfaces/interfaces';
 import { setAllCars } from '@/redux/slices/cars/carsSlice';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 async function fetchModels(): Promise<Model[]> {
 	try {
@@ -21,19 +22,29 @@ async function fetchModels(): Promise<Model[]> {
 }
 
 const Sidebar = () => {
+	const navigate = useNavigate();
+	const location = useLocation();
+
 	const dispatch = useAppDispatch();
 	const open = useAppSelector(state => state.uiState.burgerOpen);
 	const allCars = useAppSelector(state => state.cars.allModels);
+	const selectedTab = useAppSelector(state => state.uiState.selectedTab);
 
-	const [selected, setSelected] = useState<string>('');
+	const [selected, setSelected] = useState<string>(
+		location.pathname === '/home' ? 'Modelos' : selectedTab
+	);
 
 	const handleItemClick = (name: string) => {
-		setSelected(name);
 		setTimeout(() => {
 			dispatch(setBurgerOpen(false));
 		}, 500);
+		navigate(`/home`);
+		setTimeout(() => {
+			setSelected(name);
+		}, 2000);
+		dispatch(setSelectedTab(SelectedTabEnum.MODELOS));
+		console.log({ selected }, { name });
 	};
-
 	useEffect(() => {
 		async function fetchData() {
 			if (allCars.length === 0) {

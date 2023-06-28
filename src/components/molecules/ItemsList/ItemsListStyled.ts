@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled, { keyframes } from 'styled-components/macro';
 
 export const StyledItemsListContainer = styled.div`
 	width: 100%;
@@ -18,7 +18,6 @@ export const StyledItemAndButtonContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 30px;
 	& > button {
 		z-index: -10px;
 		transition: all 0.2s;
@@ -46,7 +45,7 @@ export const StyledItemBox = styled.div`
 	flex-direction: column;
 	justify-content: start;
 	width: 268px;
-	height: 200px;
+	height: 180px;
 	& > h1 {
 		text-align: center;
 		font-size: 28px;
@@ -63,12 +62,11 @@ export const StyledItemBox = styled.div`
 `;
 
 export const StyledItemBoxImage = styled.img`
-	/* max-width: 221px; */
-	/* max-height: 118px; */
 	width: 100%;
 	height: 100%;
 	flex-shrink: 0;
 	object-fit: contain;
+	transform: translateY(-40px);
 `;
 
 export const StyledItemBoxButton = styled.button`
@@ -80,5 +78,75 @@ export const StyledItemBoxButton = styled.button`
 	flex-shrink: 0;
 	background-color: ${({ theme }) => theme.color.gray[1]};
 	color: ${({ theme }) => theme.color.gray[10]};
+	border-radius: 27px;
+`;
+
+// SKELETONS PARA LOS AUTOS
+const skeletonShimmerAnimation = keyframes`
+	0% {
+		background-position: -1000px 0;
+	}
+
+	100% {
+		background-position: 1000px 0;
+	}
+`;
+
+export const StyledSkeletonContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`;
+
+export const StyledItemBoxSkeleton = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	width: 268px;
+	height: 200px;
+	background-color: ${({ theme }) => theme.color.gray[9]};
+	border-radius: 8px;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: linear-gradient(
+			90deg,
+			rgba(255, 255, 255, 0) 0,
+			rgba(255, 255, 255, 0.8) 50%,
+			rgba(255, 255, 255, 0) 100%
+		);
+		z-index: 1;
+		animation: ${skeletonShimmerAnimation} 4s infinite;
+	}
+`;
+
+export const StyledSkeletonText = styled.div`
+	width: 80%;
+	height: 20px;
+	background-color: ${({ theme }) => theme.color.gray[8]};
+	margin-bottom: 10px;
+	border-radius: 4px;
+`;
+
+export const StyledSkeletonImage = styled.div`
+	width: 100%;
+	height: 118px;
+	background-color: ${({ theme }) => theme.color.gray[8]};
+	margin-bottom: 10px;
+	border-radius: 4px;
+`;
+
+export const StyledItemBoxButtonSkeleton = styled.div`
+	width: 152px;
+	height: 34px;
+	background-color: ${({ theme }) => theme.color.gray[8]};
 	border-radius: 27px;
 `;
