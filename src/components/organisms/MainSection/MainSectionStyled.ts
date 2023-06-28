@@ -7,36 +7,36 @@ export const StyledMainSection = styled.main`
 	justify-content: start;
 	align-items: start;
 	width: 100%;
-	max-width: 1140px;
+	max-width: 71.25rem;
 	z-index: 0;
 	background-color: ${({ theme }) => theme.color.gray[10]};
-	@media (max-width: 1160px) {
-		padding: 0 10px;
+	@media (max-width: 72.5rem) {
+		padding: 0 0.625rem;
 	}
 	& > h1 {
 		z-index: 1;
 		position: sticky;
-		top: -10px;
+		top: -0.625rem;
 		display: flex;
 		justify-content: start;
 		align-items: start;
 		background-color: ${({ theme }) => theme.color.gray[10]};
 		color: ${({ theme }) => theme.color.gray[2]};
-		font-size: 50px;
+		font-size: 3.125rem;
 		font-weight: 700;
 		text-align: left;
-		letter-spacing: -1px;
-		min-height: 214px;
+		letter-spacing: -0.0625rem;
+		min-height: 13.375rem;
 		width: 100%;
-		padding-top: 85px;
-		box-shadow: 0px 3px 20px 20px rgba(255, 255, 255, 1);
-		@media (max-width: 733px) {
+		padding-top: 5.3125rem;
+		box-shadow: 0rem 0.1875rem 1.25rem 1.25rem rgba(255, 255, 255, 1);
+		@media (max-width: 45.8125rem) {
 			transition: all 0.2s;
-			padding-top: 40px;
-			top: 40px;
+			padding-top: 2.5rem;
+			top: 2.5rem;
 		}
-		@media (max-width: 420px) {
-			font-size: 40px;
+		@media (max-width: 26.25rem) {
+			font-size: 2.5rem;
 		}
 	}
 `;
