@@ -10,24 +10,13 @@ import { Model, SelectedTabEnum } from '@/interfaces/interfaces';
 import { setAllCars } from '@/redux/slices/cars/carsSlice';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-async function fetchModels(): Promise<Model[]> {
-	try {
-		const response = await fetch('https://challenge.egodesign.dev/api/models/');
-		const data = await response.json();
-		return data;
-	} catch (error) {
-		console.error(error);
-		return [];
-	}
-}
-
 const Sidebar = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 
 	const dispatch = useAppDispatch();
 	const open = useAppSelector(state => state.uiState.burgerOpen);
-	const allCars = useAppSelector(state => state.cars.allModels);
+
 	const selectedTab = useAppSelector(state => state.uiState.selectedTab);
 
 	const [selected, setSelected] = useState<string>(
@@ -45,15 +34,6 @@ const Sidebar = () => {
 		dispatch(setSelectedTab(SelectedTabEnum.MODELOS));
 		console.log({ selected }, { name });
 	};
-	useEffect(() => {
-		async function fetchData() {
-			if (allCars.length === 0) {
-				const data = await fetchModels();
-				dispatch(setAllCars(data));
-			}
-		}
-		fetchData();
-	}, []);
 
 	return (
 		<S.StyledSidebar open={open}>

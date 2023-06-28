@@ -15,6 +15,9 @@ export const StyledSidebar = styled.aside<{ open: boolean }>`
 	transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
 	transition: all 0.2s;
 	z-index: 1;
+	@media (max-width: 480px) {
+		max-width: 100vw;
+	}
 `;
 
 export const StyledSidebarMainContainer = styled.div`

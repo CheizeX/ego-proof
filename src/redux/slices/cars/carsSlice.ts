@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState = {
 	allModels: [],
+	selectedCar: 1,
 };
 
 const cars = createSlice({
@@ -12,9 +13,12 @@ const cars = createSlice({
 		setAllCars: (state: any, action: PayloadAction<Model[]>) => {
 			state.allModels = action.payload;
 		},
+		setSelectedCar: (state: any, action: PayloadAction<number>) => {
+			state.selectedCar = action.payload;
+		},
 	},
 });
 
-export const { setAllCars } = cars.actions;
+export const { setAllCars, setSelectedCar } = cars.actions;
 
 export default cars.reducer;
