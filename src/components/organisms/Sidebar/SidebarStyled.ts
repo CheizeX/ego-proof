@@ -10,6 +10,7 @@ export const StyledSidebar = styled.aside<{ open: boolean }>`
 	width: 100%;
 	max-width: 390px;
 	height: calc(100% - 70px);
+	min-height: calc(100vh - 70px);
 	box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.05);
 	background-color: ${({ theme }) => theme.color.gray[10]};
 	transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
