@@ -4,7 +4,7 @@ export const defaultTheme: DefaultTheme = {
 	color: {
 		gray: {
 			1: '#2A2A2A',
-			2: '#454545',
+			2: '#373737',
 			3: '#5C5C5C',
 			4: '#707070',
 			5: '#878787',
