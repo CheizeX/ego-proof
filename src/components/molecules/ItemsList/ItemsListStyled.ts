@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components/macro';
 
 export const StyledItemsListContainer = styled.div`
@@ -79,6 +80,19 @@ export const StyledItemBoxButton = styled.button`
 	background-color: ${({ theme }) => theme.color.gray[1]};
 	color: ${({ theme }) => theme.color.gray[10]};
 	border-radius: 27px;
+	position: relative;
+`;
+
+export const StyledLink = styled(Link)`
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color: inherit;
+	position: absolute;
+	cursor: pointer;
 `;
 
 // SKELETONS PARA LOS AUTOS

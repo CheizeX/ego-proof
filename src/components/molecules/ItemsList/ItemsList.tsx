@@ -1,13 +1,15 @@
-import { useAppSelector } from '@/redux/hook/hooks';
+import { useAppDispatch, useAppSelector } from '@/redux/hook/hooks';
 import * as S from './ItemsListStyled';
 import { Model } from '@/interfaces/interfaces';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { setSelectedCar } from '@/redux/slices/cars/carsSlice';
 
 const ItemsList = () => {
+	const dispatch = useAppDispatch();
 	const allCars = useAppSelector(state => state.cars.allModels);
+
 	const [showItems, setShowItems] = useState(false);
-	console.log(allCars);
 
 	const location = useLocation();
 	const queryParams = new URLSearchParams(location.search);
@@ -41,6 +43,10 @@ const ItemsList = () => {
 	} else if (orderBy === 'Más viejos primero') {
 		sortedCars.sort((a: Model, b: Model) => a.year - b.year);
 	}
+
+	const handleModelClick = (id: number) => {
+		dispatch(setSelectedCar(id));
+	};
 
 	useEffect(() => {
 		setShowItems(false);
@@ -80,7 +86,14 @@ const ItemsList = () => {
 								</h2>
 								<S.StyledItemBoxImage src={item.photo} alt={item.name} />
 							</S.StyledItemBox>
-							<S.StyledItemBoxButton>Ver Modelo</S.StyledItemBoxButton>
+							<S.StyledItemBoxButton>
+								<S.StyledLink
+									to={`/ficha/${item.id}`}
+									onClick={() => handleModelClick(item.id)}
+								>
+									Ver Modelo
+								</S.StyledLink>
+							</S.StyledItemBoxButton>
 						</S.StyledItemAndButtonContainer>
 				  ))}
 		</S.StyledItemsListContainer>
