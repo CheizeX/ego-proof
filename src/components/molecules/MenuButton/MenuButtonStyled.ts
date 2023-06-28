@@ -1,15 +1,7 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
-interface BurgerProps {
-	open: boolean;
-	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const StyledBurger = styled(motion.button)<{ open: boolean }>`
-	position: fixed;
-	top: 20px;
-	right: 30px;
+export const StyledBurger = styled(motion.button)<{ open: boolean }>`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -50,21 +42,3 @@ const StyledBurger = styled(motion.button)<{ open: boolean }>`
 		transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
 	}
 `;
-
-const Burger = ({ open, setOpen }: BurgerProps) => {
-	return (
-		<StyledBurger
-			open={open}
-			onClick={() => {
-				console.log(open);
-				setOpen(!open);
-			}}
-		>
-			<div />
-			<div />
-			<div />
-		</StyledBurger>
-	);
-};
-
-export default Burger;
