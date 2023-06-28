@@ -24,15 +24,12 @@ const Sidebar = () => {
 	);
 
 	const handleItemClick = (name: string) => {
+		setSelected(name);
 		setTimeout(() => {
+			navigate(`/home`);
 			dispatch(setBurgerOpen(false));
 		}, 500);
-		navigate(`/home`);
-		setTimeout(() => {
-			setSelected(name);
-		}, 2000);
 		dispatch(setSelectedTab(SelectedTabEnum.MODELOS));
-		console.log({ selected }, { name });
 	};
 
 	return (

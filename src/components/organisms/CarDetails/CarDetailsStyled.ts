@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const StyledCardDetailsMainContainer = styled.section`
 	flex: 1;
@@ -7,7 +7,6 @@ export const StyledCardDetailsMainContainer = styled.section`
 	justify-content: start;
 	align-items: start;
 	width: 100%;
-	max-width: 1140px;
 	z-index: 0;
 	background-color: ${({ theme }) => theme.color.gray[10]};
 `;

@@ -23,7 +23,7 @@ export const HomeButton = styled(Link)`
 	background-color: ${({ theme }) => theme.color.gray[1]};
 	color: ${({ theme }) => theme.color.gray[10]};
 	padding: 1rem 2rem;
-	border-radius: 27px;
+	border-radius: 1.6875rem;
 	font-size: 1.2rem;
 	text-decoration: none;
 

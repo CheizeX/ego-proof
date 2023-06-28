@@ -45,7 +45,7 @@ const Filters = () => {
 	// scroll cuando se filtra
 	const scrollToTop = () => {
 		window.scrollTo({
-			top: 150,
+			top: 170,
 			behavior: 'smooth',
 		});
 	};

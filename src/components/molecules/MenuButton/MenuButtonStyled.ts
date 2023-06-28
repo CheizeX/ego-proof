@@ -24,10 +24,10 @@ export const StyledBurger = styled(motion.button)<{ open: boolean }>`
 		width: 2rem;
 		height: 0.25rem;
 		background: ${({ theme }) => theme.color.gray[1]};
-		border-radius: 10px;
+		border-radius: 0.625rem;
 		transition: all 0.3s linear;
 		position: relative;
-		transform-origin: 1px;
+		transform-origin: 0.0625rem;
 	}
 	:first-child {
 		transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0deg)')};
@@ -35,7 +35,8 @@ export const StyledBurger = styled(motion.button)<{ open: boolean }>`
 
 	:nth-child(2) {
 		opacity: ${({ open }) => (open ? '0' : '1')};
-		transform: ${({ open }) => (open ? 'translateX(-20px)' : 'translateX(0)')};
+		transform: ${({ open }) =>
+			open ? 'translateX(-1.25rem)' : 'translateX(0)'};
 	}
 
 	:nth-child(3) {
