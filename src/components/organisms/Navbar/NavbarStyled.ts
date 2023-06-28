@@ -9,12 +9,12 @@ export const StyledNavbar = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 15px 0 35px;
+	padding: 0 0.9375rem 0 2.1875rem;
 	min-width: 100%;
-	height: 70px;
+	height: 4.375rem;
 	background-color: ${({ theme }) => theme.color.gray[10]};
 	color: ${({ theme }) => theme.color.gray[1]};
-	border-bottom: 1px solid ${({ theme }) => theme.color.gray[8]};
+	border-bottom: 0.0625rem solid ${({ theme }) => theme.color.gray[8]};
 	z-index: 1;
 `;
 
@@ -25,17 +25,17 @@ export const StyledNavbarLeftSideContainer = styled.div`
 	position: relative;
 	& > img {
 		z-index: 2;
-		margin-right: 30px;
-		width: 40px;
-		height: 40px;
+		margin-right: 1.875rem;
+		width: 2.5rem;
+		height: 2.5rem;
 	}
 `;
 
 export const StyledNavbarLeftSideButton = styled.button<{ selected: boolean }>`
-	height: 50px;
-	width: 150px;
+	height: 3.125rem;
+	width: 9.375rem;
 	min-height: 100%;
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 600;
 	border: none;
 	background: none;
@@ -43,23 +43,23 @@ export const StyledNavbarLeftSideButton = styled.button<{ selected: boolean }>`
 		selected ? theme.color.red[2] : theme.color.gray[1]};
 	transition: all 0.2s;
 	position: relative;
-	border-radius: 4px;
+	border-radius: 0.25rem;
 	transition: all 0.2s;
 	&:hover {
 		transition: all 0.2s;
 		cursor: pointer;
 		opacity: 0.8;
-		box-shadow: inset 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: inset 0rem 0.1875rem 0.4375rem 0rem rgba(0, 0, 0, 0.1);
 	}
-	@media (max-width: 580px) {
+	@media (max-width: 36.25rem) {
 		display: none;
 	}
 `;
 
 export const StyledUnderlineContainer = styled.div`
 	position: relative;
-	width: 150px;
-	@media (max-width: 580px) {
+	width: 9.375rem;
+	@media (max-width: 36.25rem) {
 		display: none;
 	}
 `;
@@ -68,12 +68,12 @@ export const StyledUnderline = styled(motion.div)<{
 	selected: boolean;
 }>`
 	position: absolute;
-	height: 4px;
-	bottom: -2.5px;
+	height: 0.25rem;
+	bottom: -0.1563rem;
 	background-color: ${({ theme }) => theme.color.red[2]};
 	border-radius: 0rem;
-	width: 150px;
-	@media (max-width: 580px) {
+	width: 9.375rem;
+	@media (max-width: 36.25rem) {
 		display: none;
 	}
 `;
@@ -82,6 +82,6 @@ export const StyledNavbarRightSideContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 10px;
+	gap: 0.625rem;
 	z-index: 2;
 `;

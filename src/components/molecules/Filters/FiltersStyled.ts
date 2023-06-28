@@ -4,20 +4,20 @@ export const StyledFiltersComponent = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	border-bottom: 1px solid ${({ theme }) => theme.color.gray[8]};
-	padding-bottom: 15px;
+	border-bottom: 0.0625rem solid ${({ theme }) => theme.color.gray[8]};
+	padding-bottom: 0.9375rem;
 	font-weight: 600;
 	position: sticky;
-	top: 140px;
+	top: 8.75rem;
 	background: ${({ theme }) => theme.color.gray[10]};
 	z-index: 2;
-	@media (max-width: 733px) {
+	@media (max-width: 45.8125rem) {
 		transition: all 0.2s;
-		top: 210px;
+		top: 13.125rem;
 	}
-	@media (max-width: 420px) {
+	@media (max-width: 26.25rem) {
 		transition: all 0.2s;
-		top: 190px;
+		top: 11.875rem;
 	}
 `;
 
@@ -26,18 +26,18 @@ export const StyledLeftFiltersContainer = styled.div`
 	display: flex;
 	align-items: center;
 	width: 100%;
-	gap: 20px;
-	max-width: 700px;
-	@media (max-width: 840px) {
+	gap: 1.25rem;
+	max-width: 43.75rem;
+	@media (max-width: 52.5rem) {
 		transition: all 0.2s;
 		display: none;
 	}
 `;
 
 export const StyledFilterButton = styled.button<{ selected: boolean }>`
-	border-radius: 18px;
-	font-size: 14px;
-	padding: 5px 15px;
+	border-radius: 1.125rem;
+	font-size: 0.875rem;
+	padding: 0.3125rem 0.9375rem;
 	transition: all 0.2s;
 
 	${({ selected, theme }) =>
@@ -65,11 +65,11 @@ export const StyledFilterDropdownButton = styled.button<{ open: boolean }>`
 	position: relative;
 	display: flex;
 	align-items: center;
-	gap: 6px;
-	font-size: 14px;
+	gap: 0.375rem;
+	font-size: 0.875rem;
 	font-weight: 600;
-	line-height: 14px;
-	letter-spacing: 0.079px;
+	line-height: 0.875rem;
+	letter-spacing: 0.0049rem;
 	transition: all 0.2s;
 	& > svg {
 		transition: all 0.2s;
@@ -92,18 +92,18 @@ export const StyledFilterDropdownButton = styled.button<{ open: boolean }>`
 
 export const StyledFilterDropdown = styled.div<{ open: boolean }>`
 	position: absolute;
-	top: 35px;
+	top: 2.1875rem;
 	right: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	min-width: 170px;
-	border-radius: 6px;
+	min-width: 10.625rem;
+	border-radius: 0.375rem;
 	background: #fff;
-	box-shadow: 2px 8px 20px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0.125rem 0.5rem 1.25rem 0rem rgba(0, 0, 0, 0.1);
 	overflow: hidden;
 	& > button:not(:last-child) {
-		border-bottom: 2px solid ${({ theme }) => theme.color.gray[9]};
+		border-bottom: 0.125rem solid ${({ theme }) => theme.color.gray[9]};
 	}
 	${({ open }) =>
 		open
@@ -120,25 +120,25 @@ export const StyledFilterDropdown = styled.div<{ open: boolean }>`
 					transition: all 0.2s;
 			  `}
 
-	@media (max-width: 420px) {
-		max-width: 186px;
-		min-width: 153px;
+	@media (max-width: 26.25rem) {
+		max-width: 11.625rem;
+		min-width: 9.5625rem;
 	}
 `;
 
 export const StyledFilterDropdownItem = styled.button<{
 	selected: boolean;
 }>`
-	min-height: 35px;
+	min-height: 2.1875rem;
 	display: flex;
-	gap: 4px;
+	gap: 0.25rem;
 	align-items: center;
 	justify-content: start;
 	width: 100%;
-	font-size: 10px;
-	line-height: 35px;
-	letter-spacing: -0.1px;
-	padding: 0 16px;
+	font-size: 0.625rem;
+	line-height: 2.1875rem;
+	letter-spacing: -0.0063rem;
+	padding: 0 1rem;
 	transition: all 0.2s;
 	${({ selected }) =>
 		selected &&
@@ -151,10 +151,10 @@ export const StyledFilterDropdownItem = styled.button<{
 		color: ${({ theme }) => theme.color.red[1]};
 		transition: all 0.2s;
 	}
-	@media (max-width: 420px) {
-		padding: 0 10px;
+	@media (max-width: 26.25rem) {
+		padding: 0 0.625rem;
 		& * {
-			font-size: 12px;
+			font-size: 0.75rem;
 		}
 	}
 `;
@@ -164,7 +164,7 @@ export const StyledLeftFiltersMobileContainer = styled(
 	StyledRightFiltersContainer
 )`
 	display: none;
-	@media (max-width: 840px) {
+	@media (max-width: 52.5rem) {
 		display: flex;
 	}
 `;
@@ -183,5 +183,5 @@ export const StyledLeftFilterDropdownItemMobile = styled(
 	StyledFilterDropdownItem
 )`
 	flex: 1;
-	font-size: 12px;
+	font-size: 0.75rem;
 `;

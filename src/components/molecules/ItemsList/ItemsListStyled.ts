@@ -4,14 +4,14 @@ import styled, { keyframes } from 'styled-components/macro';
 export const StyledItemsListContainer = styled.div`
 	width: 100%;
 	position: sticky;
-	top: 270px;
+	top: 16.875rem;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
-	grid-column-gap: 10px;
-	grid-row-gap: 40px;
+	grid-template-columns: repeat(auto-fit, minmax(16.75rem, 1fr));
+	grid-column-gap: 0.625rem;
+	grid-row-gap: 2.5rem;
 	justify-content: center;
 	align-content: center;
-	padding: 50px 0;
+	padding: 3.125rem 0;
 `;
 
 export const StyledItemAndButtonContainer = styled.div`
@@ -20,7 +20,7 @@ export const StyledItemAndButtonContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	& > button {
-		z-index: -10px;
+		z-index: -0.625rem;
 		transition: all 0.2s;
 		opacity: 0;
 		cursor: pointer;
@@ -42,22 +42,22 @@ export const StyledItemAndButtonContainer = styled.div`
 
 export const StyledItemBox = styled.div`
 	display: flex;
-	gap: 10px;
+	gap: 0.625rem;
 	flex-direction: column;
 	justify-content: start;
-	width: 268px;
-	height: 180px;
+	width: 16.75rem;
+	height: 11.25rem;
 	& > h1 {
 		text-align: center;
-		font-size: 28px;
+		font-size: 1.75rem;
 		font-weight: 600;
-		line-height: 30px;
-		letter-spacing: -0.653px;
+		line-height: 1.875rem;
+		letter-spacing: -0.0408rem;
 	}
 	& > h2 {
 		text-align: center;
-		font-size: 14px;
-		letter-spacing: -0.28px;
+		font-size: 0.875rem;
+		letter-spacing: -0.0175rem;
 		font-weight: 400;
 	}
 `;
@@ -67,19 +67,19 @@ export const StyledItemBoxImage = styled.img`
 	height: 100%;
 	flex-shrink: 0;
 	object-fit: contain;
-	transform: translateY(-40px);
+	transform: translateY(-2.5rem);
 `;
 
 export const StyledItemBoxButton = styled.button`
 	display: flex;
-	width: 152px;
-	height: 34px;
+	width: 9.5rem;
+	height: 2.125rem;
 	justify-content: center;
 	align-items: center;
 	flex-shrink: 0;
 	background-color: ${({ theme }) => theme.color.gray[1]};
 	color: ${({ theme }) => theme.color.gray[10]};
-	border-radius: 27px;
+	border-radius: 1.6875rem;
 	position: relative;
 `;
 
@@ -98,11 +98,11 @@ export const StyledLink = styled(Link)`
 // SKELETONS PARA LOS AUTOS
 const skeletonShimmerAnimation = keyframes`
 	0% {
-		background-position: -1000px 0;
+		background-position: -62.5rem 0;
 	}
 
 	100% {
-		background-position: 1000px 0;
+		background-position: 62.5rem 0;
 	}
 `;
 
@@ -116,11 +116,11 @@ export const StyledItemBoxSkeleton = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: start;
-	width: 268px;
-	height: 200px;
+	width: 16.75rem;
+	height: 12.5rem;
 	background-color: ${({ theme }) => theme.color.gray[9]};
-	border-radius: 8px;
-	padding: 20px;
+	border-radius: 0.5rem;
+	padding: 1.25rem;
 	position: relative;
 	overflow: hidden;
 
@@ -144,23 +144,23 @@ export const StyledItemBoxSkeleton = styled.div`
 
 export const StyledSkeletonText = styled.div`
 	width: 80%;
-	height: 20px;
+	height: 1.25rem;
 	background-color: ${({ theme }) => theme.color.gray[8]};
-	margin-bottom: 10px;
-	border-radius: 4px;
+	margin-bottom: 0.625rem;
+	border-radius: 0.25rem;
 `;
 
 export const StyledSkeletonImage = styled.div`
 	width: 100%;
-	height: 118px;
+	height: 7.375rem;
 	background-color: ${({ theme }) => theme.color.gray[8]};
-	margin-bottom: 10px;
-	border-radius: 4px;
+	margin-bottom: 0.625rem;
+	border-radius: 0.25rem;
 `;
 
 export const StyledItemBoxButtonSkeleton = styled.div`
-	width: 152px;
-	height: 34px;
+	width: 9.5rem;
+	height: 2.125rem;
 	background-color: ${({ theme }) => theme.color.gray[8]};
-	border-radius: 27px;
+	border-radius: 1.6875rem;
 `;
