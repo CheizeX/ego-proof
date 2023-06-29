@@ -89,4 +89,12 @@ export const StyledSliderImageContainer = styled.div<{}>`
 		max-height: 9.375rem;
 		border-radius: 0.625rem;
 	}
+	@media (max-width: 30rem) {
+		transition: 0.5s;
+		max-width: calc(100vw - 3.75rem);
+		& > img {
+			max-height: 15rem;
+		}
+	}
 `;
+//
