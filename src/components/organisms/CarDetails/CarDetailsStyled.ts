@@ -7,6 +7,8 @@ export const StyledCardDetailsMainContainer = styled.section`
 	justify-content: start;
 	align-items: start;
 	width: 100%;
+	height: fit-content;
+	padding-top: 4.2rem;
 	z-index: 0;
 	background-color: ${({ theme }) => theme.color.gray[10]};
 `;

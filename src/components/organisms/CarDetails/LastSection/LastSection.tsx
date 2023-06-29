@@ -8,12 +8,12 @@ const LastSection = () => {
 
 	return (
 		<S.StyledLastSectionContainer>
-			{carData?.model_highlights?.map(item => (
-				<S.StyledLastSectionItem>
+			{carData?.model_highlights?.map((item, i) => (
+				<S.StyledLastSectionItem key={i}>
 					<S.StyledLastSectionItemText>
 						<div>
 							<h1>{item.title}</h1>
-							<p>{parse(DOMPurify.sanitize(item.content))}</p>
+							<span>{parse(DOMPurify.sanitize(item.content))}</span>
 						</div>
 					</S.StyledLastSectionItemText>
 					<S.StyledLastSectionItemImg>

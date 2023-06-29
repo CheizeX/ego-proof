@@ -28,14 +28,15 @@ export const StyledMainSection = styled.main`
 		letter-spacing: -0.0625rem;
 		min-height: 13.375rem;
 		width: 100%;
-		padding-top: 5.3125rem;
+		padding-top: 6rem;
 		box-shadow: 0rem 0.1875rem 1.25rem 1.25rem rgba(255, 255, 255, 1);
 		@media (max-width: 45.8125rem) {
 			transition: all 0.2s;
-			padding-top: 2.5rem;
-			top: 2.5rem;
+			padding-top: 3.5rem;
+			top: 1.5rem;
 		}
 		@media (max-width: 26.25rem) {
+			top: 2.5rem;
 			font-size: 2.5rem;
 		}
 	}

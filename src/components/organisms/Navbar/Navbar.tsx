@@ -44,7 +44,7 @@ const Navbar = () => {
 
 	// for manage the underline animation
 	const getTabIndex = (tab: SelectedTabEnum): number => {
-		return tab === SelectedTabEnum.MODELOS ? 0 : 150;
+		return tab === SelectedTabEnum.MODELOS ? 0 : 130;
 	};
 
 	useEffect(() => {
