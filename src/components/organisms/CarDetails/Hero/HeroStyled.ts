@@ -5,10 +5,11 @@ export const StyledHeroContainer = styled.section`
 	display: flex;
 	width: 100%;
 	height: 100vh;
-	min-height: 30rem;
+	min-height: max-content;
 	@media (max-width: 52.5rem) {
 		flex-direction: column;
 		margin-bottom: 2.5rem;
+		padding-top: 1.25rem;
 	}
 `;
 

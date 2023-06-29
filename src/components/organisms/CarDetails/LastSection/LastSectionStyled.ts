@@ -26,6 +26,7 @@ export const StyledLastSectionItem = styled.div`
 	justify-content: space-between;
 	width: 100%;
 	height: 18.75rem;
+	height: fit-content;
 	@media (max-width: 52.5rem) {
 		transition: 0.2s;
 		flex-direction: column-reverse;
@@ -63,7 +64,7 @@ export const StyledLastSectionItemText = styled.div`
 			line-height: 1.6875rem;
 			letter-spacing: -0.025rem;
 		}
-		& > p {
+		& > span {
 			& * {
 				font-size: 1rem;
 				line-height: 1.6875rem;

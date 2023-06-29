@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import { motion } from 'framer-motion';
 
 export const StyledNavbar = styled.nav`
-	position: sticky;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
